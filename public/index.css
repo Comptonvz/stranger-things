@@ -1,3 +1,105 @@
 body {
   background-color: white;
+  font-family: "Oswald", sans-serif;
+}
+nav {
+  padding: 20px;
+  text-align: center;
+  background-color: #ffa500;
+  border-radius: 15px;
+}
+form {
+  display: block;
+}
+
+.link {
+  margin: 30px;
+  text-decoration: none;
+  color: white;
+}
+.link:hover {
+  color: black;
+}
+.login {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login h4 {
+  font-size: 20px;
+}
+
+.login p {
+  font-size: 20px;
+  margin-top: 0;
+}
+.reg {
+  font-size: 20px;
+  text-decoration: none;
+  background-color: #ff7878;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+}
+.reg:hover {
+  color: black;
+}
+
+.center {
+  text-align: center;
+}
+.post {
+  position: static;
+  font-size: 30px;
+  text-decoration: none;
+  background-color: #51535c;
+  max-height: 45px;
+  padding: 8px;
+  color: white;
+  margin-right: 250px;
+  margin-top: 100px;
+}
+.post:hover {
+  color: black;
+}
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input:focus {
+  border: 3px solid #555;
+}
+.submit {
+  width: 100%;
+  background-color: #ff7878;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cards {
+  flex-direction: column;
+  border: double #ff7878;
+  margin: 20px;
+  padding: 20px;
+  width: 500px;
+  min-height: 200px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
