@@ -1,7 +1,8 @@
 import React from "react";
 
-export default function Logout() {
+export default function Logout({ setToken }) {
   localStorage.clear(); /// it had to b done like this srry.
+  setToken("");
   console.log(localStorage);
   // if (document.getElementById("button").clicked == true) {
   //   return <h3> LOGGED OUT</h3>;

@@ -40,10 +40,15 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Login setToken={setToken} />} />
         <Route path="/register" element={<Register setToken={setToken} />} />
-        <Route path="/posts" element={<Posts />} />
+        <Route
+          path="/posts"
+          element={<Posts currentUser={currentUser} token={token} />}
+        />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/posting" element={<Posting token={token} />} />
-        <Route path="/logout" element={<Logout />} />
+        {currentUser._id ? (
+          <Route path="/posting" element={<Posting token={token} />} />
+        ) : null}
+        <Route path="/logout" element={<Logout setToken={setToken} />} />
         <Route path="/edit" element={<Edit />} />
       </Routes>
     </div>

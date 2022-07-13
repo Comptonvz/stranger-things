@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { fetchAllPosts } from "api/postfetch";
 import { Link } from "react-router-dom";
+import { deletePost } from "api/auth";
 
-export function myOwn() {
-  if (Posts.isAuthor) {
-    console.log("this is the author");
-  }
-}
-
-export default function Posts() {
+export default function Posts({ currentUser, token }) {
   const [postList, setPostList] = useState([]); //// creating post holder
 
   useEffect(() => {
@@ -32,10 +27,20 @@ export default function Posts() {
             </h4>
             <p>Price: {post.price}</p>
             <p>Description: {post.description}</p>
-
-            <Link onClick={myOwn()} className="edit" to="/edit">
-              Edit Post
-            </Link>
+            {currentUser._id === post.author._id ? (
+              <Link className="edit" to="/edit">
+                Edit Post
+              </Link>
+            ) : null}
+            {currentUser._id === post.author._id ? (
+              <button
+                onClick={() => {
+                  deletePost(token, post._id);
+                }}
+              >
+                DELETE
+              </button>
+            ) : null}
           </body>
         );
       })}
